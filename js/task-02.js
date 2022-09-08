@@ -17,6 +17,6 @@ const elements = ingredients.map(option => {
   return ingredientsEl;
 })
 
-console.log(elements);
 
-ingredientsElContainer.append(...elements)
+ingredientsElContainer.insertAdjacentHTML("beforeend", elements)
+console.log(ingredientsElContainer);
