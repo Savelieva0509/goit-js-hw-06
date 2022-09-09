@@ -5,8 +5,10 @@ const counterValue = {
     },
     decrement() {
         this.value -= 1;
+        this.value > 0 ? this.value-- :  this.value = 0;
     },
 };
+
 
 
 const decrementBtn = document.querySelector('[data-action="decrement"]');
