@@ -7,23 +7,24 @@ const createBtnRef = document.querySelector(['data-create'])
 const destroyBtnRef = document.querySelector(['data-destroy'])
 const boxesContainerRef = document.querySelector('#boxes')
 
-destroyBtnRef.addEventListener("click",destroyBoxes)
-createBtnRef.addEventListener('click',createBoxes)
-
-
 function createBoxes(amount) {
-  const box = document.createElement('div')
-  box.style.width = '30px';
-  box.style.height = '30px';
-  box.style.background = getRandomHexColor();
-  amount = +inputNumberRef.value;
-
-  return box;
+  amount = inputNumberRef.value;
+  const basicSize = 30;
+  for (const i = 0; i < amount; i++) {
+    const size = basicSize + i * 10;
+    const box = document.createElement("div");
+    box.style.width = size;
+    box.style.height = size;
+    box.style.background = getRandomHexColor();
+    boxesContainerRef.appendChild(box);
+  }
+  return boxesContainerRef;
 }
 
 function destroyBoxes() {
-  boxes.innerHTML = "";
+  boxesContainerRef.innerHTML = "";
+  inputNumberRef.innerHTML = "";
 }
 
-
-
+destroyBtnRef.addEventListener("click",destroyBoxes)
+createBtnRef.addEventListener('click',createBoxes)
