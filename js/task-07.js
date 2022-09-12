@@ -5,6 +5,9 @@ const text = document.querySelector("#text")
 
 input.addEventListener("input", changeSizeText)
 
-function changeSizeText(){
-    text.style.fontSize = input.value + "px"
+text.style.fontSize = input.value + "px"
+
+
+function changeSizeText(event){
+    text.style.fontSize = `${event.currentTarget.value}px` 
 }

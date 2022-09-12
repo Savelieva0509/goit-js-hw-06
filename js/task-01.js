@@ -8,9 +8,11 @@ categoriesItems.forEach(item => {
 
     console.log(`Category: ${titleEl}`);
 
-    const itemList = item.querySelectorAll("li")
+    const itemList = item.lastElementChild
 
-    console.log(`Elements: ${itemList.length}`);
+    // const itemList = item.querySelectorAll("li")
+
+    console.log(`Elements: ${itemList.children.length}`);
 }
 
 )
